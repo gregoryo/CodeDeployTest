@@ -3,6 +3,27 @@ os: linux
 files:
   - source: /html
     destination: /var/www/html
+  - source: /configs/moelis.conf
+    destination: /etc/apache2/sites-enabled/
+  - source: /configs/www.conf
+    destination: /etc/php5/fpm/pool.d/
+  - source: /configs
+    destination: /root/configs
+permissions:
+  - object: /var/www/html
+    pattern: "**"
+    owner: www-data
+    group: www-data
+    mode: 755
+    type:
+      - directory
+  - object: /var/www/html
+    pattern: "**"
+    owner: www-data
+    group: www-data
+    mode: 644
+    type:
+      - file
 
 hooks:
   ApplicationStop:
@@ -18,9 +39,6 @@ hooks:
       runas: root
   AfterInstall:
     - location: scripts/after_install
-      timeout: 300
-      runas: root
-    - location: scripts/install_crontab
       timeout: 300
       runas: root
   ApplicationStart:
