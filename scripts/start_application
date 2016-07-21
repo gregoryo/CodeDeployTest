@@ -1,0 +1,9 @@
+#!/bin/bash
+#####
+
+### 
+a2ensite intuit
+service php5-fpm start
+service apache2 start
+
+exit $?

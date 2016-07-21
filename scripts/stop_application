@@ -1,0 +1,8 @@
+#!/bin/bash
+#####
+
+### Stop web services to change configs
+service php5-fpm stop
+service apache2 stop
+
+exit $?

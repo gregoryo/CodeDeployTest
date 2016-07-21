@@ -1,0 +1,48 @@
+#!/bin/bash
+#####
+
+#####
+# Prepare for overwrite of php-fpm, php, and apache config files
+#####
+if [ -e "/etc/php5/fpm/pool.d/www.conf" ]
+  then
+    mv -f /etc/php5/fpm/pool.d/www.conf /etc/php5/fpm/pool.d/www.conf.backup
+fi
+if [ -e "/etc/apache2/sites-enabled/intuit.conf" ]
+  then
+      mv -f  /etc/apache2/sites-enabled/intuit.conf  /etc/apache2/sites-enabled/intuit.conf.backup
+fi
+#if [ -e "/etc/httpd/conf/httpd.conf" ]
+#  then
+#    mv -f /etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf.bk
+#fi
+#if [ -e "/etc/httpd/conf.modules.d/00-mpm.conf" ]
+#  then
+#    mv -f /etc/httpd/conf.modules.d/00-mpm.conf /etc/httpd/conf.modules.d/00-mpm.conf.bk
+#fi
+#if [ -e "/etc/httpd/vhost.d/site.conf" ]
+#  then
+#    mv -f /etc/httpd/vhost.d/site.conf /etc/httpd/vhost.d/site.conf.bk
+#fi
+
+
+#if [ -e "/etc/apache2/sites-available/site.conf" ]
+#  then
+#    mv /etc/apache2/sites-available/site.conf /etc/apache2/sites-available/site.conf_BAK
+#    mv /root/configs/site.conf /etc/apache2/sites-available/
+#  else
+#  	mv /root/configs/site.conf /etc/apache2/sites-available/
+#fi
+#rm /etc/apache2/sites-enabled/site.conf
+#rm /etc/apache2/sites-available/site.conf
+
+a2enmod rewrite
+a2enmod expires
+a2enmod headers
+a2enmod proxy
+a2enmod proxy_fcgi
+a2enmod ssl
+
+a2dissite 000-default
+a2dissite default-ssl
+

@@ -1,0 +1,10 @@
+#!/bin/bash
+#####
+# Move wordpress config
+#####
+
+cp /root/configs/wp-config-production.php /var/www/html/wp-config.php;
+cp /root/configs/htaccess-prod  /var/www/html/.htaccess;
+
+chown www-data:www-data /var/www/html/.htaccess
+
