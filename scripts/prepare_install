@@ -2,9 +2,10 @@
 #####
 # Move existing code base
 #####
-if [ -d "/var/www/html/" ]
+if [ -d "/var/www/html" ];
   then
-    mv -f /var/www/html /var/www/html.bk
+    rm -rf /var/www/html.bk
+    mv -f /var/www/html /var/www/html.bk;
   else
     echo "Web directory /var/www/html not installed... are we ubuntu?";
 fi

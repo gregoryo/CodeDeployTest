@@ -3,7 +3,7 @@ os: linux
 files:
   - source: /html
     destination: /var/www/html
-  - source: /configs/moelis.conf
+  - source: /configs/intuit.conf
     destination: /etc/apache2/sites-enabled/
   - source: /configs/www.conf
     destination: /etc/php5/fpm/pool.d/
