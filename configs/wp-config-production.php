@@ -3,7 +3,7 @@
 
 // ** MySQL settings ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'moelisprod');
+define('DB_NAME', 'intuitprod');
 
 /** MySQL database username */
 define('DB_USER', 'wordpress');
