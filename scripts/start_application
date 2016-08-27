@@ -2,7 +2,7 @@
 #####
 
 ### 
-a2ensite intuit
+a2ensite site
 service php5-fpm start
 service apache2 start
 

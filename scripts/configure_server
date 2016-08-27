@@ -10,7 +10,7 @@ if [ -e "/etc/php5/fpm/pool.d/www.conf" ]
 fi
 if [ -e "/etc/apache2/sites-enabled/intuit.conf" ]
   then
-      mv -f  /etc/apache2/sites-enabled/intuit.conf  /etc/apache2/sites-enabled/intuit.conf.backup
+      mv -f  /etc/apache2/sites-enabled/site.conf  /etc/apache2/sites-enabled/site.conf.backup
 fi
 #if [ -e "/etc/httpd/conf/httpd.conf" ]
 #  then
