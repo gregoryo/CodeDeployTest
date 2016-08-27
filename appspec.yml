@@ -3,7 +3,7 @@ os: linux
 files:
   - source: /html
     destination: /var/www/html
-  - source: /configs/intuit.conf
+  - source: /configs/site.conf
     destination: /etc/apache2/sites-enabled/
   - source: /configs/www.conf
     destination: /etc/php5/fpm/pool.d/
